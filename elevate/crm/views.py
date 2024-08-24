@@ -4,8 +4,25 @@ from django.http import HttpResponse
 
 def homepage(request):
 
+    clientList = [
 
-    return render(request, 'crm/index.html')
+        {
+            'id': '1',
+            'name': 'John Doe',
+            'occupation': 'Electrical Engineer'
+        },
+
+        {
+            'id': '2',
+            'name': 'Kate Smith',
+            'occupation': 'Lawyer'
+        }
+    ]
+
+    context = {'mainClientList': clientList}
+
+
+    return render(request, 'crm/index.html', context)
 
 
 
